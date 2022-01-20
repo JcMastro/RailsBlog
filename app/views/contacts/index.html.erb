@@ -18,7 +18,10 @@
                 <td><%= contact.email %></td>
                 <td><%= link_to 'Show', contact%> </td>
                 <td><%= link_to 'Edit', edit_contact_path(contact)%> </td>
-                <td><%= link_to 'Destroy', method: :delete, data: {confirm: 'esta seguro?'}%> </td>
+                <td><%= link_to 'Destroy', contact_path(contact),data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %></td>
             </tr>
 
         <% end %>

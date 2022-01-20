@@ -12,7 +12,9 @@
                 <td> <%= phone.phone_type %></td>
                 <td><%= phone.number%></td>
                 <td><%= link_to 'Edit', edit_contact_phone_path(@contact)%> </td>
-                <td><%= link_to 'Destroy', method: :delete, data: {confirm: 'esta seguro?'}%> </td>
+                <td><%= link_to 'Destroy', contact_phone_path(@contact),data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?" } %></td>
             </tr>
 
         <% end %>

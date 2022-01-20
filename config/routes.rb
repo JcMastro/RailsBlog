@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "contact#index"
+  root "contacts#index"
 
   resources :articles do
     resources :comments
