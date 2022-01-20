@@ -1,0 +1,20 @@
+<%= form_for @contact do |f| %>
+    <div>
+        Name: <%= f.text_field :name %>        
+        Date of Birth: <%= f.text_field :dob %>        
+        Email: <%= f.text_field :email %>
+        
+        <br>
+    </div>
+
+    <br>
+        
+        <%=f.fields_for :phones do |f| %>
+            <%= render 'contacts/phone_fields', f: f%>
+        <% end %>
+        
+
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

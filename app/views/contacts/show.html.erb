@@ -1,0 +1,22 @@
+<h1><%= @contact.name %></h1>
+<p><%= l(@contact.dob,:format => "%m/%d/%Y") %></p>
+<p><%= @contact.age %></p>
+<p><%= @contact.email %></p>
+
+<ul>
+    <li><%= link_to "Edit", edit_contact_path(@contact) %></li>
+    <li><%= link_to "Destroy", contact_path(@contact), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %></li>
+</ul>
+
+<h2>Phones</h2>
+<%= render @contact.phones if @contact.phones.present? %>
+
+<%= link_to "Regresar", contacts_path %>
+
+
+
+
+
