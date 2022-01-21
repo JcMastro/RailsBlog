@@ -1,0 +1,13 @@
+%h2= @contact.name
+%p= l(@contact.dob,:format => "%m/%d/%Y")
+%p= @contact.age
+%p= @contact.email
+%ul
+  %li= link_to "Edit", edit_contact_path(@contact)
+  %li= link_to "Destroy", contact_path(@contact), data: { |
+          turbo_method: :delete,                         |
+          turbo_confirm: "Are you sure?"                 |
+      }                                                  |
+%h3 Phones
+= render "phones/phone"
+= link_to "Regresar", contacts_path

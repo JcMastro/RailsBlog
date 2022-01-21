@@ -1,0 +1,13 @@
+= form_for @contact do |f|
+  %div
+    Name: #{f.text_field :name}
+    %br/
+    Date of Birth: #{f.text_field :dob}
+    %br/
+    Email: #{f.text_field :email}
+    %br/
+  %br/
+  = f.fields_for :phones do |f|
+    = render 'contacts/phone_fields', f: f
+  %div
+    = f.submit
