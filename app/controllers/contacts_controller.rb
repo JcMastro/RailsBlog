@@ -11,6 +11,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @phone = @contact.phones.new
   end
 
   def create
@@ -25,6 +26,7 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
+    @contact.phones.new
   end
 
   def update
