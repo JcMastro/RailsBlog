@@ -10,15 +10,12 @@
   %tbody
     - @contacts.each do |contact|
       %tr
-        %td
-          = contact.name
+        %td= contact.name
         %td= l(contact.dob,:format => "%m/%d/%Y")
         %td= contact.age
         %td= contact.email
-        %td
-          = link_to 'Show', contact
-        %td
-          = link_to 'Edit', edit_contact_path(contact)
+        %td= link_to 'Show', contact
+        %td= link_to 'Edit', edit_contact_path(contact)
         %td= link_to 'Destroy', contact_path(contact),data: { |
             turbo_method: :delete,                           |
             turbo_confirm: "Are you sure?"}                  |

@@ -7,11 +7,9 @@
   %tbody
     - @contact.phones.each do |phone|
       %tr
-        %td
-          = phone.phone_type
+        %td= phone.phone_type
         %td= phone.number
-        %td
-          = link_to 'Edit', edit_contact_phone_path(@contact)
+        %td= link_to 'Edit', edit_contact_phone_path(@contact)
         %td= link_to 'Destroy', contact_phone_path(@contact),data: { |
             turbo_method: :delete,                                  |
             turbo_confirm: "Are you sure?" }                        |
