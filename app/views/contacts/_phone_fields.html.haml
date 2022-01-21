@@ -1,3 +1,8 @@
-Phone type: #{f.select :phone_type, ['Mobile', 'Landline'], selected: 'Landline'}
-%br/
-Number: #{f.text_field :number}
+%h4 Phones
+.form-group
+    = f.label :phone_type
+    = f.select :phone_type, ['Mobile', 'Landline'], selected: 'Landline'
+    %br
+    = f.label :number
+    =f.text_field :number
+

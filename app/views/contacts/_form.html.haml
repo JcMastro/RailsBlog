@@ -7,7 +7,16 @@
     Email: #{f.text_field :email}
     %br/
   %br/
-  = f.fields_for :phones do |f|
-    = render 'contacts/phone_fields', f: f
+
+  %div{"data-controller" => "nested-form"}
+    = f.fields_for :phones do |f|
+      = render 'contacts/phone_fields', f: f      
+    %template{"data-target" => "nested-form.template"}
+      = f.fields_for :phones, Phone.new, child_index: 'New_RECORD' do |f|
+        = render 'contacts/phone_fields', f: f
+      
+    .mb-3{"data-target" => "nested-form.links"}
+      = link_to 'Add Phone', '#', class: 'btn btn-outline-primary', data: {action: 'click->nested-form#add_association'}
+  
   %div
     = f.submit
