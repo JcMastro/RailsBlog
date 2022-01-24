@@ -1,4 +1,11 @@
 = form_for @contact do |f|
+  - if @contact.errors.any?
+    %div#error_explanation
+      %h2= pluralize(@contact.errors.count, "error")
+      %ul
+        =@contact.errors.full_messages.each do |message|
+          %li= message
+
   %div
     Name: #{f.text_field :name}
     %br/

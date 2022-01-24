@@ -10,4 +10,8 @@
     %link{:href => "https://cdn.simplecss.org/simple.min.css", :rel => "stylesheet"}/
     = javascript_importmap_tags
   %body
-    = yield
+  %br/
+  - if notice
+    = render "layouts/alerts" 
+  %br
+  = yield
