@@ -1,8 +1,11 @@
-%h4 Phones
-.form-group
-    = f.label :phone_type
-    = f.select :phone_type, ['Mobile', 'Landline'], selected: 'Landline'
-    %br
-    = f.label :number
-    =f.text_field :number
+= content_tag :div, class:'nested-fields', data: {new_record: f.object.new_record?}  do
+    .form-group
+        = f.label :phone_type
+        = f.select :phone_type, ['Mobile', 'Landline'], selected: 'Landline'
+        %br
+        = f.label :number
+        =f.text_field :number
+        %br
+        %small= link_to "Remove Phone", "#", class: 'btn btn-secondary btn-lg active', data: {action: "click->nested-form#remove_association"}
+        / <haml_loud> form.hidden_field :_destroy</haml_loud>
 

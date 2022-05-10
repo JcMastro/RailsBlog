@@ -9,7 +9,7 @@
   %div
     Name: #{f.text_field :name}
     %br/
-    Date of Birth: #{f.text_field :dob}
+    Date of Birth: #{f.date_field :dob}
     %br/
     Email: #{f.text_field :email}
     %br/
@@ -23,7 +23,7 @@
         = render 'contacts/phone_fields', f: f
       
     .mb-3{"data-target" => "nested-form.links"}
-      = link_to 'Add Phone', '#', class: 'btn btn-outline-primary', data: {action: 'click->nested-form#add_association'}
+      = link_to 'Add Phone', '#', class: 'btn btn-primary btn-lg active', data: {action: 'click->nested-form#add_association'}
   
   %div
     = f.submit

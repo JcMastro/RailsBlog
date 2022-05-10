@@ -13,4 +13,16 @@ export default class extends Controller {
       
       this.linksTarget.insertAdjacentHTML('beforebegin', content)
     }
+
+    remove_association(event) {
+      event.preventDefault()
+  
+      let wrapper = event.target.closest(".nested-fields")
+      if (wrapper.dataset.newRecord == "true") {
+        wrapper.remove()
+      } else {
+        wrapper.querySelector("input[name*='_destroy']").value = true
+        wrapper.style.display = 'none'
+      }
+    }
 }  

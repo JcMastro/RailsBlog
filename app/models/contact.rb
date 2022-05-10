@@ -6,7 +6,7 @@ class Contact < ApplicationRecord
     accepts_nested_attributes_for :phones, :allow_destroy => true, :reject_if => :all_blank
 
     validates :name, presence: true
-    validates :dob, presence: true, length: { minimum: 10}
+    validates :dob, presence: true
     validates :email, presence: true
 
     def age            
